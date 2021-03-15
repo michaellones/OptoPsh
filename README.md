@@ -1,17 +1,3 @@
-> Copyright 2009-2010 Jon Klein
->
-> Licensed under the Apache License, Version 2.0 (the "License");
-> you may not use this file except in compliance with the License.
-> You may obtain a copy of the License at
->
->    http://www.apache.org/licenses/LICENSE-2.0
->
-> Unless required by applicable law or agreed to in writing, software
-> distributed under the License is distributed on an "AS IS" BASIS,
-> WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-> See the License for the specific language governing permissions and
-> limitations under the License.
-
 OptoPsh
 =======
 
@@ -77,6 +63,6 @@ Where <directory> is usually a batch directory. The fourth argument should be 'p
 Trajectory movies
 -----------------
 
-If ffmpeg is installed,the bash script trajectorymovie.sh can be used to generate a trajectory movie, with a frame for each move.'
+If ffmpeg is installed, the bash script trajectorymovie.sh can be used to generate a trajectory movie, with a frame for each move.
 
     $ trajectorymovie.sh <optimiser-file> <params-file> <CEC-function_number> <moves|-1> <local|pop> [max-pop]

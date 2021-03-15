@@ -31,7 +31,7 @@ The script processruns.sh reevaluates all the best-of-run optimisers in one or m
     $ processruns.sh <directory1> <directory2> ...
 
 This will create a number of files:
-- <directory_name>_reevaluated.txt, for each directory, listing the reevaluation errors in the form: output_file mean_error standard_deviation list_of_errors
+- directory_name_reevaluated.txt, for each directory, listing the reevaluation errors in the form: output_file mean_error standard_deviation list_of_errors
 - means.txt containing the mean errors for each best-of-run optimiser in each batch, with one column for each batch. This is useful for producing distribution plots.
 - allprogramssorted_reevaluated, within each directory, containing all the best-of-run programs for that batch, with the mean error in the first column and the program in the second. This file can be used as a hybrid optimiser pool.
 
@@ -44,7 +44,7 @@ The bash script evaluateoptimiser.sh will re-evaluate an evolved optimiser using
 
     $ evaluateoptimiser.sh <params-file> <optimiser-file> [repeats moves problems dims modify-problems] [ensemble-size]
 
-The optional parameters will override any settings in params-file (use -1 to use the current setting). If optimiser-file is an output file, then it will use the best-of-run optimiser. If optimiser-file is a program pool file, then it will form a hybrid optimiser. You can set the parameter ensembleSize in params-file to limit the number of programs to be used in the hybrid, or use the argument ensemble-size if you are also specifying the other optional parameters.
+The optional arguments will override any settings in params-file (use -1 to use the current setting). If optimiser-file is an output file, then it will use the best-of-run optimiser. If optimiser-file is a program pool file, then it will form a hybrid optimiser. You can set the parameter ensembleSize in params-file to limit the number of programs to be used in the hybrid, or use the argument ensemble-size if you are also specifying the other optional parameters.
 
 Visualising Optimisers
 ======================
@@ -58,11 +58,11 @@ The bash script plottrajectories.sh generates trajectory plots for a set of opti
 
     $ plottrajectories.sh <directory> <CEC-function-number> <moves|-1> <local|pop> [repeats]
 
-Where <directory> is usually a batch directory. The fourth argument should be 'pop'; 'local' is obsolete. A value other than -1 for moves will cause the trajectory to be truncated at the specified iteration. Specifying a value for 'repeats' will generate multiple trajectory plots for each optimiser, which is useful due to stochasticity. Note that there is also an R script, plottrajectory.R, which generates a single plot from an existing trajectory file.
+Where "directory" is usually a batch directory. The fourth argument should be 'pop'; 'local' is obsolete. A value other than -1 for moves will cause the trajectory to be truncated at the specified iteration. Specifying a value for 'repeats' will generate multiple trajectory plots for each optimiser, which is useful due to stochasticity. Note that there is also an R script, plottrajectory.R, which generates a single plot from an existing trajectory file.
 
 Trajectory movies
 -----------------
 
-If ffmpeg is installed, the bash script trajectorymovie.sh can be used to generate a trajectory movie, with a frame for each move.
+If [ffmpeg](https://www.ffmpeg.org) is installed, the bash script trajectorymovie.sh can be used to generate a trajectory movie, with a frame for each move.
 
     $ trajectorymovie.sh <optimiser-file> <params-file> <CEC-function_number> <moves|-1> <local|pop> [max-pop]

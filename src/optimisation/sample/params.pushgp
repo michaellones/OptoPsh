@@ -1,0 +1,44 @@
+# A sample configuration file for OptoPsh
+
+# specify CEC 2005 function number(s) to optimise
+# use a comma-separated list for multiple functions
+# use 'coco' to evaluate on the CoCo benchmarks (experimental)
+optimisation.problems = 12
+optimisation.dimensions = 10
+
+# swarm size and number of iterations
+optimisation.popsize = 1
+optimisation.moves = 1000
+
+# number of runs to average over
+optimisation.runs = 10
+
+# whether to use fixed starting points
+# should be 'false' when evolving optimisers
+optimisation.fixedstarts = false
+
+# whether to apply problem transformations
+# should be 'true' when evolving optimisers
+optimisation.modifyproblems = true
+
+# Psh settings
+# see the section "Configuration Files" in the Psh readme file
+# https://github.com/jonklein/Psh/blob/master/README.md
+problem-class = optimisation.PopulationOptimisation
+max-generations = 50
+population-size = 200
+execution-limit = 100
+max-points-in-program = 100
+max-random-code-size = 50
+lexicase-selection = false
+tournament-size = 5
+mutation-percent = 20
+crossover-percent = 70
+simplification-percent = 5
+reproduction-simplifications = 20
+report-simplifications = 100
+final-simplifications = 1000
+min-random-float = 0.0
+max-random-float = 1.0
+
+instruction-set = (boolean.= boolean.and boolean.dup boolean.flush boolean.fromfloat boolean.frominteger boolean.not boolean.or boolean.pop boolean.rand boolean.rot boolean.shove boolean.stackdepth boolean.swap boolean.xor boolean.yank boolean.yankdup vector.dim+ vector.dim* exec.= exec.do*count exec.do*range exec.do*times exec.dup exec.flush exec.if exec.iflt exec.noop false float.% float.* float.+ float.- float./ float.< float.= float.> float.abs float.cos float.dup float.exp float.flush float.fromboolean float.frominteger float.ln float.log float.max float.min float.neg float.pop float.pow float.rand float.rot float.shove float.sin float.stackdepth float.swap float.tan float.yank float.yankdup input.inall input.inallrev input.index input.stackdepth integer.% integer.* integer.+ integer.- integer./ integer.< integer.= integer.> integer.abs integer.dup integer.flush integer.fromboolean integer.fromfloat integer.ln integer.log integer.max integer.min integer.neg integer.pop integer.pow integer.rand integer.rot integer.shove integer.stackdepth integer.swap integer.yank integer.yankdup true vector.* vector./ vector.+ vector.- vector.dprod vector.dup vector.flush vector.mag vector.pop vector.rot vector.scale vector.shove vector.stackdepth vector.swap vector.wrand vector.yank vector.yankdup vector.between vector.apply vector.zip vector.best vector.current float.erc integer.erc)

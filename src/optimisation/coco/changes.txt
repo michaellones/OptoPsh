@@ -1,0 +1,15 @@
+This is currently only built for macOS.
+
+Need to activate Java 8, since javah missing in v10 onwards
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8.0_66`
+(/usr/libexec/java_home -V to get version name)
+
+Changes made:
+Move java files into cocobits (or other package)
+javah -jni cocobits.CocoJNI
+Rename CocoJNI.c to cocobits_CocoJNI.c
+Change import in CocoJNI.c to cocobits_CocoJNI.h
+Change signatures in CocoJNI.c to Java_cocobits_…
+gcc -I"$JAVA_HOME/include" -I"$JAVA_HOME/include/darwin/" -o libCocoJNI.jnilib -shared cocobits_CocoJNI.c
+Add folder containing libCocoJNI.jnilib to Eclipse project (Java Build Path -> Libraries -> JRE System Library -> Native library location -> Edit…)
+Change visibility of Timing methods to public

@@ -24,6 +24,8 @@ import optimisation.problems.Problem;
 
 /**
  * The Push language interpreter.
+ * 
+ * Changes made to Psh version to support optimisation.
  */
 
 public class Interpreter implements Serializable {

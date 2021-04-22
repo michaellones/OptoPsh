@@ -17,6 +17,10 @@ OptoPsh
 
 OptoPsh is a version of [Psh](http://spiderland.org/Psh/) that is used to evolve optimisers. [Psh](http://spiderland.org/Psh/) is a Java implementation of [Push and PushGP](http://hampshire.edu/lspector/push.html).
 
+For more information about OptoPsh, see:
+
+> Michael Lones, Evolving Continuous Optimisers from Scratch, arXiv:2103.11746 [cs.NE], 2021
+> [https://arxiv.org/abs/2103.11746](https://arxiv.org/abs/2103.11746)
 
 Building OptoPsh
 ================
